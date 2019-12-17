@@ -1,0 +1,28 @@
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+.bg-white {
+    background-color: #ffffff;
+}
+.active{
+    background: #4da7ff;
+    color: white;
+}
+.table-primary{
+    background: #4da7ff;
+}
+body {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 1px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+}

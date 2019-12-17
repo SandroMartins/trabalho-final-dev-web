@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/cadastro.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="js/commons.js"></script>
+    <title>Cadastro de Usuário</title>
+</head>
+<body >
+    <div class="container">
+        <form id="formularioCadastro" method="post">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Cadastro de Usuário</div>
+                <div class="panel-body">
+                    <div class="mb-3">
+                        <label for="login">Login <h11>*</h11></label>
+                        <input value="" type="text" id="login" name="login" class="form-control" placeholder required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="senha">Senha <h11>*</h11></label>
+                        <input type="password" id="senha" name="senha" class="form-control" placeholder required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmarSenha">Confirmar Senha <h11>*</h11></label>
+                        <input type="password" name="confirmarSenha" id="confirmarSenha" class="form-control" placeholder required>
+                    </div>
+                    <div id="senhaNaoIgual" class="alert alert-danger" style="display: none" role="alert">
+                        Senhas não são iguais !
+                    </div>
+                    <hr class="mb-4">
+                    <h4>Dados Pessoais</h4>
+                    <div class="mb-3">
+                        <label for="nome">Nome <h11>*</h11></label>
+                        <input type="text" id="nome" name="nome" class="form-control" placeholder required>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label for="data_nascimento" style="margin-top: 5px">Data de Nascimento <h11>*</h11></label>
+                        </div>
+                        <div class="col-3">
+                            <input type="date" id="data_nascimento" name="data_nascimento" class="form-control" style="margin-left: -5px" placeholder required>
+                        </div>
+                            <label id="idade" style="margin-top: 5px">Idade: 0 anos</label>
+
+                    </div>
+                    <div class="d-block my-3">
+                        <label class="mb-3">Sexo <h11>*</h11></label>
+                        <div class="custom-control custom-radio">
+                            <input id="masculino" type="radio" value="masculino" name="sexo" class="custom-control-input form-control" checked required>
+                            <label class="custom-control-label" for="masculino">Masculino</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input id="feminino" type="radio" name="sexo" value="feminino" class="custom-control-input" required>
+                            <label class="custom-control-label" for="feminino">Feminino</label>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <h4>Endereço</h4>
+                    <div class="row" style="margin-top: 20px">
+                        <div class="col-1">
+                            <label for="cep" style="margin-top: 5px">CEP <h11>*</h11></label>
+                        </div>
+                        <div class="col-6" style="margin-left: -40px">
+                            <input type="number" id="cep" name="cep" class="form-control" maxlength="8" placeholder required>
+                        </div>
+
+                        <div class="col-5">
+                            <button class="btn" id="botaoCep">
+                                <i class="fas fa-search" style="font-size: 25px; color: #007bff; margin-left: -20px"></i>
+                            </button>
+                        </div>
+                    </div><br/>
+                    <div id="cepInvalido" class="alert alert-danger" style="display: none" role="alert">
+                        CEP Inválido !
+                    </div>
+                    <div class="mb-3">
+                        <label for="logradouro">Logradouro</label>
+                        <input type="text" name="logradouro" id="logradouro" class="form-control">
+                    </div><br/>
+                    <div class="row">
+                        <div class="col-1">
+                            <label for="numero">Número</label>
+                        </div>
+                        <div class="col-3">
+                            <input type="text" name="numero" id="numero" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-1">
+                            <label for="complemento" style="margin-left: -10px">Complemento</label>
+                        </div>
+                        <div class="col-3">
+                            <input type="text" name="complemento" id="complemento" class="form-control" style="margin-left: 15px" placeholder>
+                        </div>
+                    </div><br/>
+                    <div class="row">
+                        <div class="col-1">
+                            <label for="cidade">Cidade</label>
+                        </div>
+                        <div class="col-3">
+                            <input value="" name="cidade" type="text" id="cidade" class="form-control" placeholder style="margin-left: -10px">
+                        </div>
+                        <div class="col-1">
+                            <label for="estado">UF</label>
+                        </div>
+                        <div class="col-3">
+                            <select class="custom-select d-block form-control" name="estado" id="estado" style="margin-left: -30px">
+                                <option>Selecione</option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <button class="btn btn-lg btn-primary btn-lg btn-block" type="submit">Cadastrar</button>
+                    <button class="btn btn-lg btn-primary btn-lg btn-block" type="reset" onclick="window.location.href ='index.html'">Cancelar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

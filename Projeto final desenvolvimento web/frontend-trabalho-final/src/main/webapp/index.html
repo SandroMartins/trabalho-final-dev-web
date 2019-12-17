@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/commons.js"></script>
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/login.css" rel="stylesheet" type="text/css">
+    <title>Login</title>
+
+</head>
+<body class="text-center">
+    <div class="container">
+        <img class="mb-3" src="img/login.png" alt width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Faça o Login</h1>
+        <div id="loginInvalido" class="alert alert-danger" style="display: none" role="alert">
+            Login ou Senha Inválida !
+        </div>
+        <form id="Formlogin" class="form-signin">
+            <input type="text" id="login" class="form-control" placeholder="Digite seu login" required autofocus>
+            <input type="password" id="senha" class="form-control" placeholder="Digite sua senha" required>
+
+            <button class="btn btn-lg btn-primary btn-block btn-sm" id="logar" type="submit">Logar</button>
+            <button class="btn btn-lg btn-primary btn-block btn-sm" type="reset">Limpar</button><br/>
+            <a class="btn btn-lg btn btn-link btn-block btn-sm" href="cadastro_usuario.html">Cadastrar novo usuário</a>
+        </form>
+    </div>
+</body>
+</html>

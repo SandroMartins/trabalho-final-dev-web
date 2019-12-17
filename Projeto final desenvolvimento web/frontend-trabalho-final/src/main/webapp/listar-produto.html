@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/menu.css" rel="stylesheet" type="text/css">
+    <title>Lista de Produtos</title>
+    <script src="js/produtos.js"></script>
+</head>
+
+<body class="bg-light">
+
+    <div class="container">
+        <nav class="nav-scroller bg-white shadow-sm">
+            <nav class="nav nav-underline">
+
+                <a class="nav-link active" href="#">Produtos</a>
+                <a class="nav-link" href="relatorio.html">Relatórios</a>
+                <a class="nav-link" href="index.html">Sair</a>
+            </nav>
+        </nav>
+        <br/><br/>
+        <table class="table table-hover table-striped">
+            <thead class="table-primary">
+            <tr style="text-align: center">
+                <th scope="col">Produtos</th>
+                <th scope="col" id="teste">Foto</th>
+                <th width="30%" scope="col">Medida</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Quantidade em estoque</th>
+                <th scope="col">Solicitar</th>
+            </tr>
+            </thead>
+            <h1>Produtos</h1>
+            <tbody id="table-body" style="text-align: center">
+
+            </tbody>
+            <div id="semEstoque" class="alert alert-danger" style="display: none" role="alert">
+                Sem Estoque !
+            </div>
+            <div id="sucesso" class="alert alert-success" style="display: none" role="alert">
+                Pedido realizado com Sucesso !
+            </div>
+        </table>
+    </div>
+</body>
+</html>
